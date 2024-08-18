@@ -1,4 +1,6 @@
-import { MovieModel } from '../models/movieModel.js';
+//import { MovieModel } from '../models/local-file-system/movieModel.js';
+//import { MovieModel } from '../models/mongodb/movieMongo.js';
+import { MovieModel } from '../models/mysql/moviesdb.js';
 import { validateMovie, validatePartialMovie } from '../schemas/movies.js';
 
 export class MovieController {
