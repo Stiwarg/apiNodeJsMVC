@@ -1,5 +1,9 @@
 import z from 'zod';
 
+// Definición de los géneros válidos
+const genresEnum = z.enum(['action', 'adventure', 'crime', 'comedy', 'drama', 'fantasy', 'horror', 'thriller', 'sci-fi', 'romance', 'animation', 'biography']);
+
+
 const moviesSchema = z.object({
 
     title: z.string({
@@ -18,7 +22,9 @@ const moviesSchema = z.object({
     poster: z.string().url({
         message: 'Poster must be a valid URL'
     }),
-    genre: z.array(z.enum(['Action', 'Adventure', 'Crime', 'Comedy', 'Drama', 'Fantasy', 'Horror', 'Thriller', 'Sci-fi', 'Romance', 'Animation', 'Biography',]),{
+    genre: z.array( z.preprocess(
+        ( value ) => typeof value === 'string' ? value.toLowerCase() : value, genresEnum
+    ), {
         required_error: 'Movie genre is required',
         invalid_type_error: 'Movie genre must be an array of enum Genre'
     })

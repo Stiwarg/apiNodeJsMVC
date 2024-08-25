@@ -2,7 +2,7 @@
 GET http://localhost:1234/movies
 
 ### Recuperar una película por id
-GET http://localhost:1234/movies/e2607643-5c29-11ef-a3b1-18c04d8e554c
+GET http://localhost:1234/movies/3ac512e5-5f4d-11ef-bc28-18c04d8e554c
 
 ### Recuperar todas las películas por un género
 GET http://localhost:1234/movies?genre=ACTION
@@ -12,28 +12,30 @@ POST http://localhost:1234/movies
 Content-Type: application/json
 
 {
-    "title": "The Godfather",
-    "year": 1975,
-    "director": "Francis Ford Coppola",
-    "duration": 175,
-    "poster": "https://img.fruugo.com/product/4/49/14441494_max.jpg",
+    "title": "Iron Man 3",
+    "year": 2013,
+    "director": "Shane Black",
+    "duration": 131,
+    "poster": "https://static.wikia.nocookie.net/marvelcinematicuniverse/images/1/1f/Iron_Man_3_Portada.png/revision/latest?cb=20191029194857&path-prefix=es",
     "genre": [
-        "Crime",
-        "Drama"
+        "actioN",
+        "DrAma",
+        "Crime"    
     ]
 }
 
 ### Borrar una película 
-DELETE http://localhost:1234/movies/c0c7fafb-5c70-11ef-a3b1-18c04d8e554c
+DELETE http://localhost:1234/movies/3ad75536-5f4d-11ef-bc28-18c04d8e554c
 
 ### Actualizar una pelicula( Uno o varios paramaetros del objeto de la pelicula con el PATCH)
 
-PATCH http://localhost:1234/movies/16515094-5c76-11ef-a3b1-18c04d8e554c
+PATCH http://localhost:1234/movies/3ac512e5-5f4d-11ef-bc28-18c04d8e554c
 Content-Type: application/json
 
 {
-    "title": "sadadada",
-    "year": 2023
+    "title": "2121",
+    "year": 2024
+
 }
 
 
